@@ -1,5 +1,5 @@
 ﻿
-namespace DialogService.Service.FrameworkDialogs.FolderBrowse
+namespace DialogServiceLibrary.Service.FrameworkDialogs.FolderBrowse
 {
 	/// <summary>
 	/// Interface describing the FolderBrowserDialog.

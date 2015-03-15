@@ -1,12 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using DialogServiceLibrary.Service.FrameworkDialogs.FolderBrowse;
+using DialogServiceLibrary.Service.FrameworkDialogs.OpenFile;
+using DialogServiceLibrary.Service.FrameworkDialogs.SaveFile;
+using System.Collections.ObjectModel;
 using System.Diagnostics.Contracts;
 using System.Windows;
-using System.Windows.Forms;
-using DialogService.Service.FrameworkDialogs.FolderBrowse;
-using DialogService.Service.FrameworkDialogs.OpenFile;
-using DialogService.Service.FrameworkDialogs.SaveFile;
 
-namespace DialogService.Service
+namespace DialogServiceLibrary.Service
 {
 	[ContractClassFor(typeof(IDialogService))]
 	abstract class IDialogServiceContract : IDialogService

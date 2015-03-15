@@ -1,5 +1,5 @@
 ﻿
-namespace DialogService.Service.FrameworkDialogs.OpenFile
+namespace DialogServiceLibrary.Service.FrameworkDialogs.OpenFile
 {
 	/// <summary>
 	/// Interface describing the OpenFileDialog.

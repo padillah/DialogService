@@ -1,5 +1,6 @@
 ﻿
-namespace DialogService.Service.FrameworkDialogs
+
+namespace DialogServiceLibrary.Service.FrameworkDialogs
 {
     /// <summary>
     /// ViewModel of the abstract FileDialog.

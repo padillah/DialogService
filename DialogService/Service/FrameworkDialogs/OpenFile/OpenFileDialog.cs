@@ -2,7 +2,7 @@
 using System.Diagnostics.Contracts;
 using System.Windows.Forms;
 
-namespace DialogService.Service.FrameworkDialogs.OpenFile
+namespace DialogServiceLibrary.Service.FrameworkDialogs.OpenFile
 {
 	/// <summary>
 	/// Class wrapping System.Windows.Forms.OpenFileDialog, making it accept a IOpenFileDialog.

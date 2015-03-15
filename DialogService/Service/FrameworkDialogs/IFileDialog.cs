@@ -1,5 +1,5 @@
 ﻿
-namespace DialogService.Service.FrameworkDialogs
+namespace DialogServiceLibrary.Service.FrameworkDialogs
 {
 	/// <summary>
 	/// Interface describing the FileDialog.

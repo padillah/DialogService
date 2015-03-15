@@ -1,4 +1,4 @@
-﻿namespace DialogService.Service.FrameworkDialogs.OpenFile
+﻿namespace DialogServiceLibrary.Service.FrameworkDialogs.OpenFile
 {
 	/// <summary>
 	/// ViewModel of the OpenFileDialog.

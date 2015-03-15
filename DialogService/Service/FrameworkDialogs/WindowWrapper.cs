@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Interop;
 using IWin32Window = System.Windows.Forms.IWin32Window;
 
-namespace DialogService.Service.FrameworkDialogs
+namespace DialogServiceLibrary.Service.FrameworkDialogs
 {
 	/// <summary>
 	/// WindowWrapper is an IWin32Window wrapper around a WPF window.

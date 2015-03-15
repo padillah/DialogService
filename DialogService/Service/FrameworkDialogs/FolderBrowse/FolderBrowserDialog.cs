@@ -2,7 +2,7 @@
 using System.Diagnostics.Contracts;
 using System.Windows.Forms;
 
-namespace DialogService.Service.FrameworkDialogs.FolderBrowse
+namespace DialogServiceLibrary.Service.FrameworkDialogs.FolderBrowse
 {
 	/// <summary>
 	/// Class wrapping System.Windows.Forms.FolderBrowserDialog, making it accept a ViewModel.

@@ -2,7 +2,7 @@
 using System.Diagnostics.Contracts;
 using System.Windows.Forms;
 
-namespace DialogService.Service.FrameworkDialogs.SaveFile
+namespace DialogServiceLibrary.Service.FrameworkDialogs.SaveFile
 {
 	/// <summary>
 	/// Class wrapping System.Windows.Forms.SaveFileDialog, making it accept a ISaveFileDialog.

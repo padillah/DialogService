@@ -1,7 +1,7 @@
-﻿using DialogService.Service.FrameworkDialogs;
-using DialogService.Service.FrameworkDialogs.FolderBrowse;
-using DialogService.Service.FrameworkDialogs.OpenFile;
-using DialogService.Service.FrameworkDialogs.SaveFile;
+﻿using DialogServiceLibrary.Service.FrameworkDialogs;
+using DialogServiceLibrary.Service.FrameworkDialogs.FolderBrowse;
+using DialogServiceLibrary.Service.FrameworkDialogs.OpenFile;
+using DialogServiceLibrary.Service.FrameworkDialogs.SaveFile;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,12 +11,12 @@ using System.Windows;
 using System.Windows.Forms;
 using ServiceLocator;
 using ServiceLocator.WindowViewModelMapping;
-using FolderBrowserDialog = DialogService.Service.FrameworkDialogs.FolderBrowse.FolderBrowserDialog;
+using FolderBrowserDialog = DialogServiceLibrary.Service.FrameworkDialogs.FolderBrowse.FolderBrowserDialog;
 using MessageBox = System.Windows.MessageBox;
-using OpenFileDialog = DialogService.Service.FrameworkDialogs.OpenFile.OpenFileDialog;
-using SaveFileDialog = DialogService.Service.FrameworkDialogs.SaveFile.SaveFileDialog;
+using OpenFileDialog = DialogServiceLibrary.Service.FrameworkDialogs.OpenFile.OpenFileDialog;
+using SaveFileDialog = DialogServiceLibrary.Service.FrameworkDialogs.SaveFile.SaveFileDialog;
 
-namespace DialogService.Service
+namespace DialogServiceLibrary.Service
 {
     /// <summary>
     /// Class responsible for abstracting ViewModels from Views.
@@ -25,7 +25,6 @@ namespace DialogService.Service
     {
         private readonly HashSet<FrameworkElement> _views;
         private readonly IWindowViewModelMappings _windowViewModelMappings;
-
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DialogService"/> class.

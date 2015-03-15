@@ -1,4 +1,4 @@
-﻿namespace DialogService.Service.FrameworkDialogs.SaveFile
+﻿namespace DialogServiceLibrary.Service.FrameworkDialogs.SaveFile
 {
 	/// <summary>
 	/// ViewModel of the OpenFileDialog.
