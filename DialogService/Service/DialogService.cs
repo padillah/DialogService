@@ -9,8 +9,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Forms;
+using DialogServiceLibrary.WindowViewModelMapping;
 using ServiceLocator;
-using ServiceLocator.WindowViewModelMapping;
 using FolderBrowserDialog = DialogServiceLibrary.Service.FrameworkDialogs.FolderBrowse.FolderBrowserDialog;
 using MessageBox = System.Windows.MessageBox;
 using OpenFileDialog = DialogServiceLibrary.Service.FrameworkDialogs.OpenFile.OpenFileDialog;
@@ -86,10 +86,47 @@ namespace DialogServiceLibrary.Service
 
 
         /// <summary>
+        /// Shows a modal dialog.
+        /// </summary>
+        /// <remarks>
+        /// The dialog used to represent the ViewModel is retrieved from the <see cref="IWindowViewModelMappings">registered mappings</see>.
+        /// </remarks>
+        /// <param name="argOwnerViewModel">
+        /// A ViewModel that represents the owner window of the modal dialog.
+        /// </param>
+        /// <param name="argViewModel">The ViewModel of the new modal dialog.</param>
+        /// <returns>
+        /// A nullable value of type bool that signifies how a window was closed by the user.
+        /// </returns>
+        public bool? ShowDialog(object argOwnerViewModel, object argViewModel)
+        {
+            Type dialogType = _windowViewModelMappings.GetWindowTypeFromViewModelType(argViewModel.GetType());
+            return ShowDialog(argOwnerViewModel, argViewModel, dialogType);
+        }
+
+
+        /// <summary>
+        /// Shows a modal dialog.
+        /// </summary>
+        /// <param name="argOwnerViewModel">
+        /// A ViewModel that represents the owner window of the modal dialog.
+        /// </param>
+        /// <param name="argViewModel">The ViewModel of the new modal dialog.</param>
+        /// <typeparam name="T">The type of the dialog to show.</typeparam>
+        /// <returns>
+        /// A nullable value of type bool that signifies how a window was closed by the user.
+        /// </returns>
+        public bool? ShowDialog<T>(object argOwnerViewModel, object argViewModel) where T : Window
+        {
+            return ShowDialog(argOwnerViewModel, argViewModel, typeof(T));
+        }
+
+
+        /// <summary>
         /// Shows a dialog.
         /// </summary>
         /// <remarks>
-        /// The dialog used to represent the ViewModel is retrieved from the registered mappings.
+        /// The dialog used to represent the ViewModel is retrieved from the <see cref="IWindowViewModelMappings">registered mappings</see>.
         /// </remarks>
         /// <param name="argOwnerViewModel">
         /// A ViewModel that represents the owner window of the dialog.
@@ -98,10 +135,10 @@ namespace DialogServiceLibrary.Service
         /// <returns>
         /// A nullable value of type bool that signifies how a window was closed by the user.
         /// </returns>
-        public bool? ShowDialog(object argOwnerViewModel, object argViewModel)
+        public void Show(object argOwnerViewModel, object argViewModel)
         {
             Type dialogType = _windowViewModelMappings.GetWindowTypeFromViewModelType(argViewModel.GetType());
-            return ShowDialog(argOwnerViewModel, argViewModel, dialogType);
+            Show(argOwnerViewModel, argViewModel, dialogType);
         }
 
 
@@ -116,11 +153,10 @@ namespace DialogServiceLibrary.Service
         /// <returns>
         /// A nullable value of type bool that signifies how a window was closed by the user.
         /// </returns>
-        public bool? ShowDialog<T>(object argOwnerViewModel, object argViewModel) where T : Window
+        public void Show<T>(object argOwnerViewModel, object argViewModel) where T : Window
         {
-            return ShowDialog(argOwnerViewModel, argViewModel, typeof(T));
+            Show(argOwnerViewModel, argViewModel, typeof(T));
         }
-
 
         /// <summary>
         /// Shows a message box.
@@ -303,6 +339,30 @@ namespace DialogServiceLibrary.Service
             // Show dialog
             return dialog.ShowDialog();
         }
+
+
+        /// <summary>
+        /// Shows a dialog.
+        /// </summary>
+        /// <param name="argOwnerViewModel">
+        /// A ViewModel that represents the owner window of the dialog.
+        /// </param>
+        /// <param name="argViewModel">The ViewModel of the new dialog.</param>
+        /// <param name="argDialogType">The type of the dialog.</param>
+        /// <returns>
+        /// Nothing.
+        /// </returns>
+        private void Show(object argOwnerViewModel, object argViewModel, Type argDialogType)
+        {
+            // Create dialog and set properties
+            Window dialog = (Window)Activator.CreateInstance(argDialogType);
+            dialog.Owner = FindOwnerWindow(argOwnerViewModel);
+            dialog.DataContext = argViewModel;
+
+            // Show dialog
+            dialog.Show();
+        }
+
 
         /// <summary>
         /// Finds window corresponding to specified ViewModel.
