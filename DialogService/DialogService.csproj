@@ -38,8 +38,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="ServiceLocator">
-      <HintPath>..\..\Reference Dlls\ServiceLocator.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\Reference DLLs\ServiceLocator.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
