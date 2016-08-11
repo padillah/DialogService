@@ -34,12 +34,12 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetSQProjectKey>DialogServiceKey</TargetSQProjectKey>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="ServiceLocator">
-      <HintPath>..\..\Reference DLLs\ServiceLocator.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows" />
@@ -67,7 +67,14 @@
     <Compile Include="WindowViewModelMapping\IWindowViewModelMappings.cs" />
     <Compile Include="WindowViewModelMapping\WindowViewModelMappings.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ServiceLocator\ServiceLocator\ServiceLocator.csproj">
+      <Project>{edcb23d1-4c72-4d3c-b49f-3da43550b792}</Project>
+      <Name>ServiceLocator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="C:\Users\Henry Padilla\Documents\Projects\SonarQube.MsBuild.targets" />
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>

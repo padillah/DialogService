@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DialogService", "DialogService\DialogService.csproj", "{82EFF267-3F43-4AE9-880B-E80CC28C305B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLocator", "..\ServiceLocator\ServiceLocator\ServiceLocator.csproj", "{EDCB23D1-4C72-4D3C-B49F-3DA43550B792}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{82EFF267-3F43-4AE9-880B-E80CC28C305B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82EFF267-3F43-4AE9-880B-E80CC28C305B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82EFF267-3F43-4AE9-880B-E80CC28C305B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDCB23D1-4C72-4D3C-B49F-3DA43550B792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDCB23D1-4C72-4D3C-B49F-3DA43550B792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDCB23D1-4C72-4D3C-B49F-3DA43550B792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDCB23D1-4C72-4D3C-B49F-3DA43550B792}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
